@@ -3,7 +3,7 @@ var button= document.getElementById('counter');
 
 button.onClick= function(){
     
-    //make a request to counter endpoint
+    //Create q request object
     var request= new XMLHttpRequest();
     
     //caoture the response and store it in a variable
@@ -16,9 +16,10 @@ button.onClick= function(){
                 span.innerHTML= counter.toString();
           }
       }  
+      //Not done yet
     };
     
-    //Render the variable in the correct span.
-
-    
+    //Make the request
+    request.open('GET','http://gautam62.imad.hasura-app.io/counter',true);
+    request.send(null);
 };
